@@ -17,7 +17,7 @@ const validators = {
             if (!rangeObj.hasOwnProperty('range')) return false;
             if (!Array.isArray(rangeObj.range)) return false;
             if (rangeObj.range.length !== 4) return false;
-            if (!(rangeObj.range.every(num => num > 0 && parseInt(num) === num))) return false;
+            if (!(rangeObj.range.every(num => num >= 0 && parseInt(num) === num))) return false;
             if (rangeObj.hasOwnProperty('allowMultiline')) {
               if (typeof rangeObj.allowMultiline !== 'boolean') return false;
             }
